@@ -20,6 +20,12 @@
 	<link href="css/styles.css" rel="stylesheet">
 	
 	<link href="css/responsive.css" rel="stylesheet">
+
+	<link href="css/discord.css" rel="stylesheet">
+
+	<link href="css/button.css" rel="stylesheet">
+
+	<link href="css/fa.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -44,6 +50,15 @@
 						<p class="desc">Our website is currently under development.</p>
 						
 					</div><!-- main-content -->
+
+					<div style="width: 400px; margin-top: 20px;">
+						<div class="button_base b03_skewed_slide_in" onclick="invite();">
+							<div><i class="fab fa-discord"></i>&nbsp;&nbsp;INVITE BOT</div>
+							<div></div>
+							<div><i class="fab fa-discord"></i>&nbsp;&nbsp;INVITE BOT</div>
+						</div>
+						<div id="discordInviteBox"></div>
+					</div>
 				</div><!-- display-table-cell -->
 			</div><!-- display-table -->
 			
@@ -64,6 +79,23 @@
 	<script src="common-js/jquery.countdown.min.js"></script>
 	
 	<script src="common-js/scripts.js"></script>
+
+	<script src="js/discord.js"></script>
+
+	<script>
+		discordInvite.init({
+		inviteCode: 'cRdusXqVp6',
+		title: 'DynDCM',
+		introText: 'Join our Discord'
+	  });
+	  discordInvite.render();
+	  </script>
+
+	  <script>
+		  function invite() {
+			  window.open('https://discord.com/api/oauth2/authorize?client_id=779064160931545110&permissions=8&scope=bot', '_Blank');
+		  }
+	  </script>
 	
 </body>
 </html>
