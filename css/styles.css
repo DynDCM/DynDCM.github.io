@@ -182,3 +182,19 @@ html {
 .right-section .footer-icons > li > a > i[class*="instagram"]{ color: #8F614A; border-color: #8F614A; }
 .right-section .footer-icons > li > a > i[class*="pinterest"]{ color: #E1C013; border-color: #E1C013; }
 
+html ::selection {
+	background: transparent;
+	color: inherit;
+}
+
+html ::-moz-selection {
+	background: transparent;
+	color: inherit;
+}
+
+html {
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
