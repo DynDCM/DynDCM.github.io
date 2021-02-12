@@ -68,6 +68,7 @@ body {
     -moz-box-sizing: border-box;
     -webkit-user-select: none;
     cursor: default;
+    border-radius: 10px;
 }
 
 .button_base:hover {
