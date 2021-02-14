@@ -45,13 +45,22 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+                <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="" />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Welcome to DynDCM</h1>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Automatic temporary voicechannel + textchannel creation</p>
+
+                <div style="margin-top: 80px;">
+                    <div class="button_base b03_skewed_slide_in" onclick="invite();" style="zoom: 1.5; -moz-transform: scale(1.5);">
+                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
+                        <div></div>
+                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
+                    </div>
+                </div>
             </div>
         </header>
+
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -59,7 +68,15 @@
                 <h2 class="page-section-heading text-center text-uppercase text-white" style="margin-bottom: 1.5em;">About</h2>
                 <!-- About Section Content-->
                 <div class="row justify-content-center">
-                    <div class="col-lg-4"><p class="lead">DynDCM is a free bot for your discord server that dynamically manages channels and automatically creates associated temporary text channels for voice channels.</br> DynDCM offers an easy to use menu to create, update, delete managed voice channels</p></div>
+                    <ul class="circle">
+                        <li><p>Create temporary and numbered voice channels by joining an CREATE-Channel</p></li>
+                        <li><p>Create an associated text channel for each temporary voice channel</p></li>
+                        <li><p>Easy configurable by using the built in commands. (Type '!dyn help' for an overview)</p></li>
+                    </ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4"><p class="lead">DynDCM is a free bot for your discord server that dynamically manages channels and automatically creates associated temporary text channels for voice channels.<br/> DynDCM offers an easy to use menu to create, update, delete managed voice channels. DynDCM manages channels dynamically and keep your server tidy and neat. :) You don't need many single channels, which make the server confusing and full.</p></div>
+                    <div class="col-lg-4"><p class="lead">Just create so-called CREATE-Channels which will automatically create a numbered temporary channel when joining; you will of course also be moved automatically.<br/> Additionally, for each automatically created voice channel an associated temporary text channel is created, which is only visible for the members which are currently in the voice channel.</p></div>
                 </div>
             </div>
         </section>
@@ -69,21 +86,10 @@
                 <h2 class="page-section-heading text-center text-uppercase text-white" style="margin-bottom: 1.5em;">Join our Demo Discord Server</h2>
                 <div class="text-center">
 
-                    <div class="button_base b03_skewed_slide_in" onclick="invite();" style="zoom: 1.5; -moz-transform: scale(1.5);">
-                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
-                        <div></div>
-                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
-                    </div>
                     <div id="discordInviteBox" style="zoom: 1.3; -moz-transform: scale(1.3);"></div>
 
                 </div>
             </div>
-
-            <script>
-                function invite() {
-                    window.open('https://discord.com/api/oauth2/authorize?client_id=779064160931545110&permissions=8&scope=bot', '_Blank');
-                }
-            </script>
         </section>
        
         <!-- Example Section-->
@@ -124,8 +130,6 @@
             </div>
         </footer>
 
-
-
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -143,8 +147,15 @@
             title: 'DynDCM',
             introText: 'Join our Discord',
             miniMode: false,
+            width: 'unset'
           });
           discordInvite.render();
           </script>
+
+          <script>
+            function invite() {
+                window.open('https://discord.com/oauth2/authorize?client_id=788427617845248072&permissions=318770192&scope=bot', '_Blank');
+            }
+        </script>
     </body>
 </html>
