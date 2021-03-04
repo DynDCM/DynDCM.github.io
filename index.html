@@ -1,103 +1,162 @@
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>DynDCM - Dynamic Discord Channel Manager</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-site-verification" content="KYBq-NmcoLMCW4ETU8RDz9yGLKOOaKkfoytj3xfFHcg" />
-	<meta charset="UTF-8">
-	
-	
-	<!-- Font -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
-	
-	
-	<link href="common-css/ionicons.css" rel="stylesheet">
-	
-	
-	<link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
-		
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<link href="css/responsive.css" rel="stylesheet">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/discord.css" rel="stylesheet">
+	    <link href="css/button.css" rel="stylesheet">
+        <meta name="google-site-verification" content="KYBq-NmcoLMCW4ETU8RDz9yGLKOOaKkfoytj3xfFHcg" />
+        <meta http-equiv="content-Type" content="text/html; utf-8" />
+        <meta http-equiv="Pragma" content="cache" />
+        <meta name="robots" content="INDEX,NOFOLLOW" />
+        <meta http-equiv="content-Language" content="en" />
+        <meta name="description" content="Discord bot which dynamically manages channels and automatically creates associated temporary text channels for voice channels. DynDCM is highly configurable and customizable by using commands." />
+        <meta name="keywords" content="Discord channel manager, Discord, Channel manager, dynamic channel manager, discord text channel for voice channel, discord automatic text channel creation," />
+        <title>DynDCM - Dynamic Discord Channel Manager</title>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">DynDCM</a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size: large;">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#test">Try it!</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Example">Example</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <div style="margin-top: 80px; margin-bottom: 80px;">
+                    <img src="assets/img/dyndcm_logo.svg" alt="" height="200" width="auto"/>
+                </div>
+                
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Welcome to DynDCM</h1>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Automatic temporary voicechannel + textchannel creation</p>
 
-	<link href="css/discord.css" rel="stylesheet">
+                <div style="margin-top: 80px;">
+                    <div class="button_base b03_skewed_slide_in" onclick="invite();" style="zoom: 1.5; -moz-transform: scale(1.5);">
+                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
+                        <div></div>
+                        <div style="padding-top: 12px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;ADD DynDCM</div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-	<link href="css/button.css" rel="stylesheet">
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white" style="margin-bottom: 1.5em;">About</h2>
+                <!-- About Section Content-->
+                <div class="row justify-content-center">
+                    <ul class="circle">
+                        <li><p>Create temporary and numbered voice channels by joining an CREATE-Channel</p></li>
+                        <li><p>Create an associated text channel for each temporary voice channel</p></li>
+                        <li><p>Easy configurable by using the built in commands. (Type '!dyn help' for an overview)</p></li>
+                    </ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4"><p class="lead">DynDCM is a free bot for your discord server that dynamically manages channels and automatically creates associated temporary text channels for voice channels.<br/> DynDCM offers an easy to use menu to create, update, delete managed voice channels. DynDCM manages channels dynamically and keep your server tidy and neat. :) You don't need many single channels, which make the server confusing and full.</p></div>
+                    <div class="col-lg-4"><p class="lead">Just create so-called CREATE-Channels which will automatically create a numbered temporary channel when joining; you will of course also be moved automatically.<br/> Additionally, for each automatically created voice channel an associated temporary text channel is created, which is only visible for the members which are currently in the voice channel.</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Join Discord Section-->
+        <section class="page-section bg-primary text-white" id="test">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-white" style="margin-bottom: 1.5em;">Join our Demo Discord Server</h2>
+                <div class="text-center">
 
-	<link href="css/fa.css" rel="stylesheet">
-	
-</head>
-<body>
-	
-	<div class="main-area">
-		
-		<section class="left-section" style="background-image: url(images/bg.jpg)">
-		
-			
-		</section><!-- left-section -->
-		
-		
-		<section class="right-section full-height">
-		
-			<a class="logo" href="#"><img src="images/logo-white.png" alt="Logo"><p>&nbsp;Dynamic Discord Channel Manager</p></a>
-			
-			
-			<div class="display-table">
-				<div class="display-table-cell">
-					<div class="main-content">
-						<h1 class="title"><b>Comming soon.</b></h1>
-						<p class="desc">Our website is currently under development.</p>
-						
-					</div><!-- main-content -->
+                    <div id="discordInviteBox" style="zoom: 1.3; -moz-transform: scale(1.3);"></div>
 
-					<div style="width: 200px; margin-top: 20px;">
-						<div class="button_base b03_skewed_slide_in" onclick="invite();">
-							<div style="padding-top: 15px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;INVITE BOT</div>
-							<div></div>
-							<div style="padding-top: 15px;"><i class="fab fa-discord"></i>&nbsp;&nbsp;INVITE BOT</div>
-						</div>
-						<div id="discordInviteBox"></div>
-					</div>
-				</div><!-- display-table-cell -->
-			</div><!-- display-table -->
-			
-			<ul class="footer-icons" style="display: flex; align-items: center;">
-				<li>Support us:&nbsp;</li>
-				<li>
-					<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="DynDCM" data-color="#FFDD00" data-emoji=""  data-font="Bree" data-text="Buy us a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-				</li>
-		
-		</section><!-- right-section -->
-		
-	</div><!-- main-area -->
-	
-	<!-- SCIPTS -->
-	
-	<script src="common-js/jquery-3.1.1.min.js"></script>
-	
-	<script src="common-js/jquery.countdown.min.js"></script>
-	
-	<script src="common-js/scripts.js"></script>
+                </div>
+            </div>
+        </section>
+       
+        <!-- Example Section-->
+        <section class="page-section portfolio bg-primary text-white" id="Example">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white" style="margin-bottom: 1.5em;">Example</h2>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-lg col-sm my-2">
+                        <div class="card" style="background-color: #64a5d1; font-size: x-large;">
+                            <img class="card-img-top" src="assets/gif/channel-join.gif" alt="" />
+                            <div class="card-body">
+                                <p class="card-text">Joining a create channel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-sm my-2">
+                        <div class="card" style="background-color: #64a5d1; font-size: x-large;">
+                            <img class="card-img-top" src="assets/gif/command-help.gif" alt="" />
+                            <div class="card-body">
+                                <p class="card-text">Accessing the help menu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed">
+            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
 
-	<script src="js/discord.js"></script>
+        <footer>
+            <div style="position: fixed; right: 18px; bottom: 18px;">
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="DynDCM" data-color="#FFDD00" data-emoji=""  data-font="Bree" data-text="Support us" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+            </div>
+        </footer>
 
-	<script>
-		discordInvite.init({
-		inviteCode: 'cRdusXqVp6',
-		title: 'DynDCM',
-		introText: 'Join our Discord',
-		miniMode: true
-	  });
-	  discordInvite.render();
-	  </script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/discord.js"></script>
+        <script>
+            discordInvite.init({
+            inviteCode: 'cRdusXqVp6',
+            title: 'DynDCM',
+            introText: 'Join our Discord',
+            miniMode: false,
+            width: 'unset'
+          });
+          discordInvite.render();
+          </script>
 
-	  <script>
-		  function invite() {
-			  window.open('https://discord.com/oauth2/authorize?client_id=779064160931545110&permissions=318770192&scope=bot', '_Blank');
-		  }
-	  </script>
-	
-</body>
+          <script>
+            function invite() {
+                window.open('https://discord.com/oauth2/authorize?client_id=779064160931545110&permissions=318770192&scope=bot', '_Blank');
+            }
+        </script>
+    </body>
 </html>
