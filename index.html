@@ -14,13 +14,14 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/discord.css" rel="stylesheet">
 	    <link href="css/button.css" rel="stylesheet">
+        <!-- SEO -->
         <meta name="google-site-verification" content="KYBq-NmcoLMCW4ETU8RDz9yGLKOOaKkfoytj3xfFHcg" />
         <meta http-equiv="content-Type" content="text/html; utf-8" />
         <meta http-equiv="Pragma" content="cache" />
         <meta name="robots" content="INDEX,NOFOLLOW" />
         <meta http-equiv="content-Language" content="en" />
         <meta name="description" content="Discord bot which dynamically manages channels and automatically creates associated temporary text channels for voice channels. DynDCM is highly configurable and customizable by using commands." />
-        <meta name="keywords" content="Discord channel manager, Discord, Channel manager, dynamic channel manager, discord text channel for voice channel, discord automatic text channel creation," />
+        <meta name="keywords" content="DynDCM, dynamic discord channel manager, Discord channel manager, Discord, Channel manager, dynamic channel manager, discord text channel for voice channel, discord automatic text channel creation," />
         <title>DynDCM - Dynamic Discord Channel Manager</title>
     </head>
     <body id="page-top">
@@ -73,7 +74,7 @@
                 <!-- About Section Content-->
                 <div class="row justify-content-center">
                     <ul class="circle">
-                        <li><p>Create temporary and numbered voice channels by joining an CREATE-Channel</p></li>
+                        <li><p>Create temporary and numbered voice channels by joining a CREATE-Channel</p></li>
                         <li><p>Create an associated text channel for each temporary voice channel</p></li>
                         <li><p>Easy configurable by using the built in commands. (Type '!dyn help' for an overview)</p></li>
                     </ul>
@@ -143,14 +144,18 @@
         <script src="js/scripts.js"></script>
         <script src="js/discord.js"></script>
         <script>
+            var minimode = false;
+            if(window.screen.width < 440) {
+                minimode = true
+            }
             discordInvite.init({
-            inviteCode: 'cRdusXqVp6',
-            title: 'DynDCM',
-            introText: 'Join our Discord',
-            miniMode: false,
-            width: 'unset'
-          });
-          discordInvite.render();
+                inviteCode: 'cRdusXqVp6',
+                title: 'DynDCM',
+                introText: 'Join our Discord',
+                miniMode: minimode,
+                width: 'unset'
+            });
+            discordInvite.render();
           </script>
 
           <script>
